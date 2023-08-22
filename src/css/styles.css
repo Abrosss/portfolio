@@ -236,8 +236,8 @@
   height: 20rem;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: top left;
-     object-position: top left;
+  -o-object-position: center center;
+     object-position: center center;
   border-radius: 5px;
 }
 .page .main .portfolio-grid .img-container:hover .links {
