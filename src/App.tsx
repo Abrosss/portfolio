@@ -210,7 +210,7 @@ function App() {
       <section className='main'>
         <header>
           <h1>NATALIA KONDRATYUK</h1>
-          <h2>portfolio</h2>
+          <h2>software developer portfolio</h2>
         </header>
         <aside className='sidebar horizontal'>
         <nav>
