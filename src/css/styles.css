@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.github {
+  background-image: url("/src/assets/github.svg");
+}
+
+.page {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 20rem auto;
+  font-family: "Oswald", sans-serif;
+  font-weight: 200;
+  letter-spacing: 1.1px;
+  position: relative;
+}
+.page .video {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page .video video {
+  width: auto;
+  height: 80%;
+}
+.page .sidebar {
+  width: 20rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #F1F7ED;
+  position: relative;
+}
+.page .sidebar .flower {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  padding: 4rem;
+}
+.page .sidebar .flower img {
+  width: 50px;
+}
+.page .sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+.page .sidebar nav div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.8rem 0;
+  cursor: pointer;
+  padding: 1rem 2rem;
+}
+.page .sidebar nav div span {
+  color: #92b9bd;
+  font-size: 0.9rem;
+  text-align: right;
+  font-weight: 400;
+}
+.page .sidebar nav div span.active {
+  color: #F1F7ED;
+}
+.page .sidebar nav div.active {
+  background-color: #191d32;
+  border-bottom: 2px rgba(167, 49, 49, 0.5) solid;
+}
+.page .sidebar.horizontal {
+  display: none;
+}
+.page .main {
+  overflow: auto;
+  background-color: #191d32;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+}
+.page .main header {
+  background-color: #282f44;
+  padding: 3rem 4rem;
+  font-family: "Oswald", sans-serif;
+  color: #F1F7ED;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-end;
+}
+.page .main header h1 {
+  font-size: 3.5rem;
+}
+.page .main header h2 {
+  font-size: 2rem;
+  font-weight: 200;
+}
+.page .main .portfolio {
+  width: 100%;
+  padding: 2rem 0;
+  padding-bottom: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #191d32;
+}
+.page .main .portfolio .portfolio-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 4rem;
+}
+.page .main .portfolio .portfolio-block h3 {
+  color: rgba(255, 255, 255, 0.7);
+}
+.page .main .portfolio .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 3.8rem 4rem;
+  background-color: #a63d40;
+}
+.page .main .portfolio .contact a {
+  text-decoration: none;
+  color: #f9e784;
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
+  font-size: 1rem;
+}
+.page .main .portfolio .contact .contact-links {
+  display: flex;
+  gap: 1rem;
+}
+.page .main .portfolio .contact h5 {
+  font-size: 2rem;
+  color: #f9e784;
+}
+.page .main .portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+.page .main .portfolio-grid .box {
+  background-color: #282f44;
+  border-radius: 8px;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #F1F7ED;
+}
+.page .main .portfolio-grid .project-title {
+  color: #F1F7ED;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.page .main .portfolio-grid p {
+  line-height: 1.8;
+  opacity: 0.8;
+}
+.page .main .portfolio-grid .img-container {
+  position: relative;
+  transition: background-color 0.5s ease-in-out;
+}
+.page .main .portfolio-grid .img-container .links {
+  width: 100%;
+  height: 98.8%;
+  display: flex;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(25, 29, 50, 0.8);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 5px;
+  transition: opacity 0.5s ease-in-out;
+}
+.page .main .portfolio-grid .img-container .links a {
+  border: 1px #F1F7ED solid;
+  width: 10rem;
+  padding: 0.8rem 1rem;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #F1F7ED;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.page .main .portfolio-grid .img-container .links a:hover {
+  background-color: #F1F7ED;
+  color: #191d32;
+}
+.page .main .portfolio-grid .img-container .links a:hover .github {
+  background-image: url("/src/assets/github-dark.svg");
+}
+.page .main .portfolio-grid .img-container .links .demo {
+  background-color: #F1F7ED;
+  color: #191d32;
+  border: 1px transparent solid;
+}
+.page .main .portfolio-grid .img-container .links .demo:hover {
+  background-color: unset;
+  border: 1px #F1F7ED solid;
+  color: #F1F7ED;
+}
+.page .main .portfolio-grid .img-container .project-image {
+  width: 100%;
+  height: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top left;
+     object-position: top left;
+  border-radius: 5px;
+}
+.page .main .portfolio-grid .img-container:hover .links {
+  opacity: 1;
+}
+.page .main .portfolio-grid .tech {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-weight: 400;
+  color: #f9e784;
+}
+
+/* Style the entire scrollbar */
+::-webkit-scrollbar {
+  width: 5px; /* width of the scrollbar */
+}
+
+/* Style the track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+  background: unset; /* color of the track */
+  background-color: black;
+}
+
+/* Style the thumb (handle) of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: unset;
+  border-radius: 20px; /* roundness of the thumb */
+  border: 3px solid #92b9bd; /* padding around the thumb */
+}
+
+@media only screen and (max-width: 1000px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+  .page .sidebar {
+    display: none;
+  }
+  .page .sidebar.horizontal {
+    display: flex;
+    width: 100%;
+  }
+  .page .sidebar.horizontal nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .page .sidebar.horizontal nav div {
+    border: none;
+  }
+  .page .sidebar.horizontal nav div span.active {
+    color: #a63d40;
+  }
+  .page .main .portfolio .portfolio-block {
+    padding: 0 2rem;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid {
+    gap: 2rem;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid .box .img-container .project-image {
+    height: 15rem;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid .box .img-container img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .page .main .portfolio .contact {
+    padding: 2rem 4rem;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .page .main header h1 {
+    font-size: 3rem;
+  }
+  .page .main .portfolio .portfolio-block {
+    padding: 0 2rem;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid {
+    gap: 2rem;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid .box {
+    padding: 1.5rem;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid .box .img-container .project-image {
+    height: 12rem;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid .box .img-container img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid .box .project-title {
+    font-size: 1.6rem;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid .box .tech {
+    font-size: 0.8rem;
+  }
+  .page .main .portfolio .contact {
+    padding: 2.3rem 4rem;
+  }
+}
+@media only screen and (min-width: 501px) and (max-width: 800px) {
+  .page .main header {
+    padding: 2rem;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .page .main header h1 {
+    font-size: 1.6rem;
+  }
+  .page .main header h2 {
+    font-size: 0.8rem;
+  }
+  .page .main .portfolio {
+    padding: 0;
+  }
+  .page .main .portfolio .portfolio-block {
+    padding: 1rem 2rem;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid .box {
+    padding: 2rem;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid .box .img-container .project-image {
+    height: unset;
+  }
+  .page .main .portfolio .portfolio-block .portfolio-grid .box .img-container img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .page .main .portfolio .contact {
+    align-items: center;
+  }
+  .page .main .portfolio .contact h5 {
+    font-size: 1.8rem;
+  }
+  .page .sidebar.horizontal {
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .page .main header {
+    padding: 2rem;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .page .main header h1 {
+    font-size: 1.6rem;
+  }
+  .page .main header h2 {
+    font-size: 0.8rem;
+  }
+  .page .main .portfolio {
+    padding: 0;
+  }
+  .page .main .portfolio .portfolio-block {
+    padding: 1rem 1rem;
+  }
+  .page .main .portfolio .contact {
+    align-items: center;
+  }
+  .page .main .portfolio .contact h5 {
+    font-size: 1.8rem;
+  }
+  .page .main .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .page .main .portfolio-grid .box {
+    padding: 1.3rem;
+  }
+  .page .main .portfolio-grid .box .img-container .project-image {
+    height: unset;
+  }
+  .page .main .portfolio-grid .box .img-container img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .page .sidebar.horizontal {
+    display: none;
+  }
+}/*# sourceMappingURL=styles.css.map */
