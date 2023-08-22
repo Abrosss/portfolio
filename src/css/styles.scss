@@ -347,6 +347,26 @@ $stackColor: #f9e784;
     }
 
   }
+  @media only screen and (max-width: 1400px) {
+    .page {
+        .main {
+
+            header {
+        
+                h1 {
+                 font-size: 2.8rem;
+                }
+                h2 {
+                    font-size: 1.5rem;
+                }
+             
+            }
+           
+    
+      }
+    }
+   
+}
   @media only screen and (max-width: 1200px) {
     .page {
         .main {
@@ -354,7 +374,10 @@ $stackColor: #f9e784;
             header {
         
                 h1 {
-                 font-size: 3rem;
+                 font-size: 2.2rem;
+                }
+                h2 {
+                    font-size: 1.2rem;
                 }
              
             }
@@ -444,23 +467,28 @@ $stackColor: #f9e784;
 
   }
   @media only screen and (max-width: 500px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
     .page {
        .main {
         header {
             padding: 2rem;
-            justify-content: center;
-            gap: .5rem;
+            align-items: unset;
+            gap: 0.5rem;
+            flex-direction: column;
             h1 {
-                font-size: 1.6rem;
+                font-size: 1.7rem;
             }
             h2 {
-                font-size: .8rem;
+                font-size: .9rem;
             }
         }
         .portfolio {
-            padding: 0;
+            padding: 1rem 0;
             .portfolio-block {
                 padding: 1rem 1rem;
+                gap: 1rem;
             }
             .contact {
                 align-items: center;
