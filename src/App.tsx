@@ -12,7 +12,6 @@ import ProjectImage5 from './assets/coffee.jpg'
 import GithubIcon from './assets/github.svg'
 import Flower from './assets/flower.svg'
 import LinkedIn from './assets/linkedin.svg'
-import { useInView } from 'react-intersection-observer';
 import { useState, useEffect, useRef } from 'react'
 
 type SectionRefs = {
