@@ -169,7 +169,7 @@ function App() {
     setBlock(true)
     setTimeout(() => {
       setBlock(false)
-    }, 1000)
+    }, 2000)
   };
  
   
