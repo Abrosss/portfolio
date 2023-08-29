@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -51,6 +52,17 @@
   background-color: #F1F7ED;
   position: relative;
 }
+.page .sidebar .repoLink {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #92b9bd;
+}
+.page .sidebar .repoLink:hover {
+  color: #a63d40;
+}
 .page .sidebar .flower {
   position: absolute;
   width: 100%;
@@ -74,7 +86,7 @@
   align-items: center;
   padding: 0.8rem 0;
   cursor: pointer;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
 }
 .page .sidebar nav div span {
   color: #92b9bd;
@@ -85,9 +97,13 @@
 .page .sidebar nav div span.active {
   color: #F1F7ED;
 }
+.page .sidebar nav div:hover span {
+  color: #a63d40;
+}
 .page .sidebar nav div.active {
   background-color: #191d32;
-  border-bottom: 2px rgba(167, 49, 49, 0.5) solid;
+  border: none;
+  transition: 0.2s background-color ease-in-out;
 }
 .page .sidebar.horizontal {
   display: none;
@@ -101,18 +117,38 @@
 }
 .page .main header {
   background-color: #282f44;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 3rem 4rem;
+}
+.page .main header .name {
   font-family: "Oswald", sans-serif;
   color: #F1F7ED;
   display: flex;
   gap: 1.5rem;
   align-items: flex-end;
 }
-.page .main header h1 {
-  font-size: 3.5rem;
+.page .main header .name h1 {
+  font-size: 3rem;
 }
-.page .main header h2 {
-  font-size: 2rem;
+.page .main header .name h2 {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+.page .main header button {
+  padding: 0.9rem 2rem;
+  font-weight: 400;
+  background-color: transparent;
+  outline: none;
+  border-radius: 25px;
+  border: 1px rgba(241, 247, 237, 0.3) solid;
+  color: #F1F7ED;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.page .main header button:hover {
+  background-color: rgba(241, 247, 237, 0.1);
   font-weight: 200;
 }
 .page .main .portfolio {
@@ -122,8 +158,12 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   background-color: #191d32;
+  background-attachment: fixed;
+  background-image: url("/src/assets/intro.svg");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .page .main .portfolio .portfolio-block {
   display: flex;
@@ -156,13 +196,45 @@
   font-size: 2rem;
   color: #f9e784;
 }
+.page .main .portfolio #about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  padding: 5rem 0;
+}
+.page .main .portfolio #about h5 {
+  font-size: 2rem;
+  color: #F1F7ED;
+}
+.page .main .portfolio #about .heropic {
+  width: 10rem;
+  height: 10rem;
+}
+.page .main .portfolio #about .heropic img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 50%;
+  border: 2px #92b9bd solid;
+}
+.page .main .portfolio #about p {
+  line-height: 1.9;
+  font-size: 1rem;
+  font-weight: 200;
+  width: 40%;
+  color: #92b9bd;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
 .page .main .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
+  padding: 0 6rem;
 }
 .page .main .portfolio-grid .box {
-  background-color: #282f44;
   border-radius: 8px;
   padding: 2rem 2rem;
   display: flex;
@@ -206,15 +278,20 @@
   background-image: url("/src/assets/github-dark.svg");
 }
 .page .main .portfolio-grid .box .links .demo {
-  background-color: #F1F7ED;
-  color: #191d32;
-  border: 1px transparent solid;
+  color: #F1F7ED;
+  border: 1px #F1F7ED solid;
+}
+.page .main .portfolio-grid .box:hover .project-title {
+  text-decoration: underline;
 }
 .page .main .portfolio-grid .project-title {
   color: #F1F7ED;
   text-decoration: none;
   font-size: 1.8rem;
   font-weight: 600;
+}
+.page .main .portfolio-grid .project-title:hover {
+  text-decoration: underline;
 }
 .page .main .portfolio-grid p {
   line-height: 1.8;
@@ -223,6 +300,7 @@
 .page .main .portfolio-grid .img-container {
   position: relative;
   transition: opacity 0.5s ease-in-out;
+  opacity: 0.9;
 }
 .page .main .portfolio-grid .img-container .project-image {
   width: 100%;
@@ -233,8 +311,8 @@
      object-position: center center;
   border-radius: 5px;
 }
-.page .main .portfolio-grid .img-container:hover {
-  opacity: 0.7;
+.page .main .portfolio-grid .img-container:hover .project-title {
+  text-decoration: underline;
 }
 .page .main .portfolio-grid .tech {
   display: flex;
@@ -245,22 +323,40 @@
   color: #f9e784;
 }
 
+.animated {
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
 /* Style the entire scrollbar */
 ::-webkit-scrollbar {
-  width: 5px; /* width of the scrollbar */
+  width: 5px;
+  /* width of the scrollbar */
 }
 
 /* Style the track (background) of the scrollbar */
 ::-webkit-scrollbar-track {
-  background: unset; /* color of the track */
+  background: unset;
+  /* color of the track */
   background-color: black;
 }
 
 /* Style the thumb (handle) of the scrollbar */
 ::-webkit-scrollbar-thumb {
   background-color: unset;
-  border-radius: 20px; /* roundness of the thumb */
-  border: 3px solid #92b9bd; /* padding around the thumb */
+  border-radius: 20px;
+  /* roundness of the thumb */
+  border: 3px solid #92b9bd;
+  /* padding around the thumb */
 }
 
 @media only screen and (max-width: 1000px) {
@@ -302,18 +398,18 @@
   }
 }
 @media only screen and (max-width: 1400px) {
-  .page .main header h1 {
+  .page .main header .name h1 {
     font-size: 2.8rem;
   }
-  .page .main header h2 {
+  .page .main header .name h2 {
     font-size: 1.5rem;
   }
 }
 @media only screen and (max-width: 1200px) {
-  .page .main header h1 {
+  .page .main header .name h1 {
     font-size: 2.2rem;
   }
-  .page .main header h2 {
+  .page .main header .name h2 {
     font-size: 1.2rem;
   }
   .page .main .portfolio .portfolio-block {
@@ -343,15 +439,15 @@
   }
 }
 @media only screen and (min-width: 501px) and (max-width: 800px) {
-  .page .main header {
+  .page .main header .name {
     padding: 2rem;
     justify-content: center;
     gap: 0.5rem;
   }
-  .page .main header h1 {
+  .page .main header .name h1 {
     font-size: 1.6rem;
   }
-  .page .main header h2 {
+  .page .main header .name h2 {
     font-size: 0.8rem;
   }
   .page .main .portfolio {
@@ -387,16 +483,16 @@
   ::-webkit-scrollbar {
     display: none;
   }
-  .page .main header {
+  .page .main header .name {
     padding: 2rem;
     align-items: unset;
     gap: 0.5rem;
     flex-direction: column;
   }
-  .page .main header h1 {
+  .page .main header .name h1 {
     font-size: 1.7rem;
   }
-  .page .main header h2 {
+  .page .main header .name h2 {
     font-size: 0.9rem;
   }
   .page .main .portfolio {
@@ -412,8 +508,15 @@
   .page .main .portfolio .contact h5 {
     font-size: 1.8rem;
   }
+  .page .main .portfolio #about {
+    padding: 1rem;
+  }
+  .page .main .portfolio #about p {
+    width: 100%;
+  }
   .page .main .portfolio-grid {
     grid-template-columns: 1fr;
+    padding: 0;
   }
   .page .main .portfolio-grid .box {
     padding: 1.3rem;
