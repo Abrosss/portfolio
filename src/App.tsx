@@ -283,7 +283,7 @@ function App() {
             <div className='heropic'>
               <img src={Picture} alt='developer picture'></img>
             </div>
-           <p>Natalia  is a versatile software developer in creating interactive user interfaces. She has a strong track record of  development projects, with two years of hands-on experience. Her translation background reflects her meticulous attention to detail and her passion for lifelong learning.</p>
+           <p>Natalia  is a software developer who specializes in creating interactive web interfaces.  Thanks to her strong technical translation background, she has a meticulous attention to detail and a commitment to delivering results. Proficient in CSS, JavaScript, React, and Python, Natalia currently works as a freelance web developer, assisting clients with their web design and development needs. </p>
           </section>
           <section ref={sectionRefs['contact']} id='contact' className='portfolio-block contact'>
             <h5>Get in touch</h5>
